@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'East Sea Dokdo', sans-serif;
+}
+.header-inner {
+    width: 100%;    /* 가로 사이즈가 1200px 넘는 해상도에서는 max-width 설정 */
+    height: 100%;   /* align-items 등으로 수직 가운데 정렬을 위해, 알맞은 height 설정이 필요함 */
+    margin: 0 auto; /* 가운데 정렬: 동일 요소에 width 가 설정되어 있을 때에만 적용 */
+    padding: 0rem 2rem;
+    overflow: hidden;
+}
+.section-inner {
+    width: 100%;    /* 가로 사이즈가 1200px 넘는 해상도에서는 max-width 설정 */
+    height: 100%;   /* align-items 등으로 수직 가운데 정렬을 위해, 알맞은 height 설정이 필요함 */
+    margin: 0 auto; /* 가운데 정렬: 동일 요소에 width 가 설정되어 있을 때에만 적용 */
+    padding: 0rem 2rem;
+    overflow: hidden;
+}
+.head-title {
+    font-weight: bold;
+    font-size: 3rem;
+    color: rgb(84, 84, 100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+.header-area {
+    height: 100%;
+    width: 100%;
+    background-image: url("../img/question-mark-6010647_1920.jpg");
+    background-size: cover;
+    background-position: center 50%;
+    background-repeat: no-repeat;
+    opacity: 0.85;
+}
+.head-description {
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem
+}
+.head-description-time {
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem
+}
+.head-description-sentence {
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem;
+}
+.start-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0; 
+}
+.head-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0; 
+}
+.head-timer-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;   
+}
+.head-chances {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+.game-area {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+#result-area {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+#chance-area {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+#prediction-history {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}

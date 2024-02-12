@@ -13,16 +13,38 @@ let playButton = document.getElementById("play-button");
 let userInput = document.getElementById("user-input");
 let resultArea = document.getElementById("result-area");
 let resetButton = document.getElementById("reset-button");
-let chances = 5;
+let chances = 7;
 let gameOver = false;
 let chanceArea = document.getElementById("chance-area");
 let history = [];
+let startButton = document.getElementById("start-button");
+// const timer = document.getElementById("timer");
+let predictionHistory = document.getElementById("prediction-history");
 
+let time = 60;
+let min = "";
+let sec = "";
+timer.value = "1:00";
 
 playButton.addEventListener("click", play);
-resetButton.addEventListener("click", reset);
-userInput.addEventListener("focus", () => {userInput.value = ""});
+resetButton.addEventListener("click", reset, );
+userInput.addEventListener("focus", () => {userInput.value = ""}, );
+startButton.addEventListener("click", start);
 
+function start() {
+    let x = setInterval(function() {
+        min = parseInt(time / 60);
+        sec = time % 60;
+
+        timer.value = document.getElementById("timer").innerHTML = min + ":" + sec;
+        time--;
+
+        if (time < 0) {
+            clearInterval(x)
+            timer.value = document.getElementById("timer").innerHTML = "시간초과";
+        }
+    }, 1000);
+};
 
 function pickRandomNum() {
     answerNum = Math.floor(Math.random() * 100) + 1;
@@ -42,17 +64,15 @@ function play() {
         return
     };
 
-
-
    chances--;
    chanceArea.textContent = `남은 기회: ${chances}번 남았습니다`;
    console.log("chance", chances);
 
     if (answerNum > userValue) {
-        resultArea.textContent = "Up!!"
+        resultArea.textContent = "예측 결과: Up!!"
     }
     else if (answerNum < userValue) {
-        resultArea.textContent = "Down!!"
+        resultArea.textContent = "예측 결과: Down!!"
     }
     else {
         resultArea.textContent = "맞췄습니다!!"
@@ -61,6 +81,7 @@ function play() {
 
     history.push(userValue);
     console.log(history);
+    predictionHistory.textContent = `입력한 숫자 목록:${history}`;
 
 
     if (chances < 1) {
@@ -75,10 +96,15 @@ function play() {
 function reset() {
     // 사용자 입력 창이 깨끗하게 비워져 있어야 함
     // 새로운 번호가 생성 되어야 함
-    userInput.value = "";
-    pickRandomNum();
-    resultArea.textContent = "결과 값이 여기 나옵니다!"
-
-}
+    userInput.value = ""
+    pickRandomNum()
+    resultArea.textContent = "결과: UP or DOWN"
+    gameOver = false
+    chances = 7
+    time = 60
+    min = ""
+    sec = ""
+    timer.value = "1:00"
+};
 
 pickRandomNum();

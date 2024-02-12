@@ -1,18 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+
     <title>숫자 맞추기 게임</title>
-</head>
-<body>
-    <h1>숫자 맞추기 게임!</h1>
-    <div id="result-area">결과 값</div>
-    <input type="number" id="user-input" placeholder="숫자를 입력하세요"/>
-    <button id="play-button">Go!</button>
-    <button id="reset-button">리셋!</button>
-    <div id="chance-area">남은 기회: 5번</div>
-    <script src="main.js"></script>    
-</body>
+  </head>
+  <body>
+    <header>
+        <div class="header-inner">
+            <div class="head-title"><i class="fa-solid fa-dice"></i>숫자 맞추기 게임</div>
+            <div class="header-area">
+                <div class="head-description">
+                    1부터 100 사이의 주어진 숫자를 맞춰보세요.
+                </div>
+                <div class="head-description-time">
+                    주어진 시간은 5분 입니다.
+                </div>
+                <div class="head-description-sentence">
+                    게임 시작 버튼을 누르면 시간이 줄어듭니다.
+                </div>
+            </div>
+            <div class="start-button">
+                <button id="start-button">게임 시작</button>
+            </div>
+            <div class="head-timer">
+                <span class="head-timer-icon"><i class="fa-solid fa-hourglass-start"></i></span>
+                남은 시간
+            </div>
+            <div class="head-timer-input">
+                <input id="timer" type="text" value="" style="text-align:center" readonly/>
+            </div> 
+            <div class="head-chances">
+                숫자를 맞힐 기회는 단 7번
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="section-inner">
+            <div class="game-area">
+                <input id="user-input" type="number" placeholder="숫자를 입력하세요" />
+                <button id="play-button">확인</button>
+                <button id="reset-button">리셋</button>
+            </div>
+            <div id="result-area">결과: UP or DOWN</div>
+            <div id="chance-area">남은 기회: 7번</div>
+            <div id="prediction-history">예측한 숫자 목록</div>
+        </div>
+    </section>
+    </div>
+
+    <script
+    src="https://kit.fontawesome.com/d421afe8ea.js"
+    crossorigin="anonymous"
+  ></script>
+    <script src="main.js"></script>
+  </body>
 </html>
